@@ -21,7 +21,7 @@ jobs:
       SITE_BASE: ${{ vars.SITE_BASE }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -32,7 +32,7 @@ jobs:
           cache: npm
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Install dependencies
         run: npm ci
@@ -41,7 +41,7 @@ jobs:
         run: npm run docs:build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: docs/.vitepress/dist
 
